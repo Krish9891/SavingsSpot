@@ -1,0 +1,6 @@
+@SavingsSpot_HostAddress = http://localhost:5008
+
+GET {{SavingsSpot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
