@@ -23,9 +23,9 @@ namespace SavingsSpot.Controllers
         }
 
         [HttpGet("{dealid}")]
-        public async Task<ActionResult<Deal>> GetDeals(int dealid)
+        public async Task<ActionResult<Deal>> GetDeals(int dealId)
         {
-            return await _context.Deals.FindAsync(dealid);
+            return await _context.Deals.FindAsync(dealId);
         }
     }
 }

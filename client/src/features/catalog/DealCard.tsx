@@ -1,5 +1,6 @@
 import { Avatar, Button, Card, CardActions, CardContent, CardMedia, Typography, CardHeader } from "@mui/material";
 import { Deal } from "../../app/models/deal";
+import { Link } from "react-router-dom";
 
 interface Props{
     deal:Deal
@@ -11,7 +12,7 @@ export default function DealCard({deal}:Props)
         <Card>
             <CardHeader
                 avatar={
-                    <Avatar sx={{bgcolor:'decondary.main'}}>
+                    <Avatar sx={{bgcolor:'secondary.main'}}>
                         {deal.title.charAt(0).toUpperCase()}
                     </Avatar>
                 }
@@ -22,7 +23,7 @@ export default function DealCard({deal}:Props)
               />
       <CardMedia
         sx={{ height: 140, backgroundSize:'container', bgcolor:'primaty.light' }}
-        image="http://picsum.photos/200"
+        image={deal.url}
         title="green iguana"
       />
       <CardContent>
@@ -35,7 +36,7 @@ export default function DealCard({deal}:Props)
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">View</Button>
+        <Button component={Link}  to={`/catalog/${deal.dealId}`} size="small">View</Button>
       </CardActions>
     </Card>
     )
